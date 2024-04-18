@@ -1,10 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>LevainBakeryNIC</title>
+    <meta name="description" content="Pasteleria Galletas">
+    <meta name="keywords" content="galletas, pasteleria, ny">
+    <meta name="author" content="Equipo 3">
+    <link rel="stylesheet" href="form.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
 
+</head>
+
+<body>
+    <header>
+        <nav class="bg-black">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-between">
+
+                    <!-- LOGO -->
+                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+
+                        <a href="#" class="hover:bg-gray-700 rounded-full px-1 py-1" aria-current="page">
+                            <div class="flex flex-shrink-0 items-center">
+                                <img class="h-12 w-auto rounded-full"
+                                    src="https://media-exp1.licdn.com/dms/image/C4E0BAQEh1Zm2oqOQ6w/company-logo_200_200/0?e=2159024400&v=beta&t=N6HJpbO9C1HNrtgFas2kKqnBRfvIP9fbOTQ0xZ-0-UI"
+                                    alt="Logo">
+                            </div>
+                        </a>
+
+                        <div class="hidden sm:ml-64 sm:block">
+                            <div class="flex space-x-12 py-2 items-baseline">
+                                <a href="index.html"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Inicio</a>
+                                <a href="src/about-us/about-us.html"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sobre
+                                    nosotros</a>
+                                <a href="src/gallery/gallery.html"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Galeria</a>
+                                <a href="src/form/form.html"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contacto</a>
+                            </div>
+                        </div>
+
+                        <a href="https://levainbakery.com/pages/shipping" target=" _blank"
+                            class=" sm: ml-16 flex space-px-12 py-2  items-center relative rounded-md px-3 py-2 hover:bg-gray-700">
+                            <img class="h-8 w-auto rounded-full"
+                                src="https://cdn.lovesavingsgroup.com/logos/levain-bakery.png" alt="levain-bakery"
+                                title="Compra aqui">
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <h1 class="toph1">
+            Deseas contactarnos?
+        </h1>
+        <form name="myForm" action="#" method="post">
+            <ul>
+                <li>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="mail">Email:</label>
+                    <input type="email" id="mail" name="user_email"/>
+                </li>
+                <li>
+                    <label for="phone">Telefono:</label>
+                    <input type="tel" id="phone" name="user_phone" maxlength="8" minlength="8"/>
+                </li>
+                <li>
+                    <label for="msg">Message:</label>
+                    <textarea id="msg" name="user_message"></textarea>
+                </li>
+                <li class="button">
+                    <button type="button" id="btnSend">Send your message</button>
+                </li>
+            </ul>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 LevainBakeryNIC</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('btnSend').addEventListener('click', function(){
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('mail').value;
+            var msg = document.getElementById('msg').value;
+            var phone = document.getElementById('phone').value;
+            if(msg == "" || email == "" || name == "" || phone == ""){
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Llena los espacios con la información correcta!',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                  })
+            }else{
+                Swal.fire({
+                    title: "Muy bien!",
+                    text: "Se ha enviado tu solicitud!",
+                    icon: "success"
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
